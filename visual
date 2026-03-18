@@ -1,0 +1,3 @@
+if (status === "vencido") {
+  html += `<tr style="background:#7f1d1d">`;
+}
