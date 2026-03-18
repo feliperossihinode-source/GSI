@@ -1,0 +1,7 @@
+.status-ativo { color: #22c55e; }
+.status-vencendo { color: #facc15; }
+.status-vencido { color: #ef4444; }
+
+tr:hover {
+  background: #1e293b;
+}
