@@ -54,6 +54,28 @@ function calcularStatus(data) {
 
   if (diff <= 0) return "vencido";
   if (diff <= 30) return "vencendo";
+function montarGrafico(dados) {
+  const statusCount = {
+    ativo: 0,
+    vencendo: 0,
+    vencido: 0
+  };
 
+  dados.forEach(l => {
+    const data = tratarData(l[9]);
+    const status = calcularStatus(data);
+    statusCount[status]++;
+  });
+
+  new Chart(document.getElementById("grafico"), {
+    type: "doughnut",
+    data: {
+      labels: ["Ativo", "Vencendo", "Vencido"],
+      datasets: [{
+        data: Object.values(statusCount)
+      }]
+    }
+  });
+}
   return "ativo";
 }
