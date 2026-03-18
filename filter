@@ -1,0 +1,9 @@
+function filtrarEmpresa(nome) {
+  const linhas = document.querySelectorAll("tbody tr");
+
+  linhas.forEach(tr => {
+    const empresa = tr.children[1].innerText;
+
+    tr.style.display = empresa.includes(nome) ? "" : "none";
+  });
+}
